@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --padding-form: 1rem;
+    --margin-form: 1rem;
+    --font-size-form: 20px;
+    --form-width: 300px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: var(--margin-form);
+    padding: var(--padding-form);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: var(--margin-form);
+    padding: var(--padding-form);
+    font-size: var(--font-size-form);
+}
+form > div:nth-child(even) {
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: var(--form-width);
+}
+
+#text-input {
+    height: 150px;
+}
+
+#text-scramble {
+    height: 75px;
+}
+
+button {
+    width: var(--form-width);
+    margin-bottom: var(--margin-form);
+}
+
+p {
+    font-size: 12px;
+}

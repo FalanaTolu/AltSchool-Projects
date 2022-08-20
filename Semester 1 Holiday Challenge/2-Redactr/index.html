@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js" defer></script>
+  <title>Redactr</title>
+</head>
+
+<body>
+  <main>
+    <h1>Redactr</h1>
+    <div id="form-container">
+      <form>
+        <div><label for="text-input">Enter text here:</label></div>
+        <div><textarea id="text-input"></textarea></div>
+        <div><label for="text-scramble">Enter word(s) to be scrambled here:</label></div>
+        <div><textarea id="text-scramble"></textarea></div>
+        <div><label for="scrambler">Character to replace words with:</label></div>
+        <div><textarea id="scrambler" maxlength="1"></textarea></div>
+        <button type="button">Redact Now</button>
+        <label for="output">Output:</label>
+        <div><textarea id="output"></textarea></div>
+        <p id="stats"></p>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
