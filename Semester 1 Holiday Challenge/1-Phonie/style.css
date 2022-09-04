@@ -17,7 +17,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   background: center / cover no-repeat url("./images/fakurian-unsplash.jpg");
 }
 
@@ -92,6 +91,8 @@ button {
   }
 
   .container {
-    padding: 0 20px 0 20px;
+    margin-top: 3rem;
+    padding: 0 20px;
+    height: 50%;
   }
 }
