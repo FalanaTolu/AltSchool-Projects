@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <script src="script.js" defer></script>
+  <title>SchoolStat</title>
+</head>
+
+<body>
+  <div class="container">
+    
+    <aside id="sidebar">
+      <div id="aside-heading">
+        <h1 class="aside-heading-text"><img src="images/alt.webp" alt="" class="aside-heading-logo">AltSchool Africa</h1>
+        <i class='bx bx-menu bx-md'></i>
+      </div>
+      <div class="aside-body">
+        <a href="#" class="aside-text">
+          <i class="bx bxs-dashboard"></i><span id="dashboard">Dashboard</span>
+        </a>
+        <a href="#" class="aside-text">
+          <i class="bx bxs-doughnut-chart"></i>
+          <span id="analytics">Analytics</span>
+        </a>
+        <a href="#" class="aside-text">
+          <i class="bx bxs-book-reader"></i>
+          <span id="students">Students</span>
+        </a>
+        <a href="#" class="aside-text">
+          <i class="bx bxs-chalkboard"></i>
+          <span id="teachers">Instructors</span>
+        </a>
+        <a href="#" class="aside-text">
+          <i class='bx bxs-calendar'></i>
+          <span id="teachers">Attendance</span>
+        </a>
+        <a href="#" class="aside-text">
+          <i class='bx bx-pencil'></i>
+          <span id="team">Scores</span>
+        </a>
+        <a href="#" class="aside-text">
+          <i class="bx bxs-cog"></i>
+          <span id="setting">Setting</span>
+        </a>
+        <a href="#" class="aside-text">
+          <i class="bx bxs-log-out"></i>
+          <span id="logout">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <header>
+      <form action="" class="search-container">
+        <input id="searchbar" type="search" name="search" placeholder=" &#x2315; Search">
+        <h1>Dashboard</h1>
+    </header>
+
+    <main>
+      <section id="card-section">
+        <div class="card">
+          <img src="images/student.png" alt="" class="card-image">
+          <div class="card-content">
+            <h3>Students</h3>
+            <p>Frontend Engineering: <span>1290</span></p>
+            <p>Backend Engineering: <span>1580</span></p>
+            <p>Cloud Engineering: <span>1090</span></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/teacher.png" alt="" class="card-image">
+          <div class="card-content">
+            <h3>Instructors</h3>
+            <p>Frontend Engineering: <span>12</span></p>
+            <p>Backend Engineering: <span>23</span></p>
+            <p>Cloud Engineering: <span>10</span></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/calendar.png" alt="" class="card-image">
+          <div class="card-content">
+            <h3>Attendance</h3>
+            <p>Frontend Engineering: <span>87%</span></p>
+            <p>Backend Engineering: <span>86%</span></p>
+            <p>Cloud Engineering: <span>75%</span></p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/scores.png" alt="" class="card-image">
+          <div class="card-content">
+            <h3>Scores</h3>
+            <p>Frontend Engineering: <span>86%</span></p>
+            <p>Backend Engineering: <span>85%</span></p>
+            <p>Cloud Engineering: <span>74%</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="table-section">
+        <div class="table-container">
+          <h3>Instructor List</h3>
+          <table class="table-1">
+            <thead>
+              <tr>
+                <th onclick="sortTable('table-1', 0)">Instructor Id <i class='bx bxs-sort-alt'></i></th>
+                <th onclick="sortTable('table-1', 1)">Name <i class='bx bxs-sort-alt'></i></th>
+                <th onclick="sortTable('table-1', 2)">Number of Courses <i class='bx bxs-sort-alt'></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>001</td>
+                <td>Ojo Oluwasetemi</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>002</td>
+                <td>Tabitha Kayvu</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>003</td>
+                <td>Rukevwe Onuwa</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>004</td>
+                <td>Jerry Uke</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>005</td>
+                <td>Maye Edwin</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-container">
+          <h3>Student Track</h3>
+          <table class="table-2">
+            <thead>
+              <tr>
+                <th>Track</th>
+                <th onclick="sortTable('table-2', 1)">Number of Students <i class='bx bxs-sort-alt'></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Frontend</td>
+                <td>1290</td>
+              </tr>
+              <tr>
+                <td>Backend(NodeJS)</td>
+                <td>470</td>
+              </tr>
+              <tr>
+                <td>Backend(Python)</td>
+                <td>217</td>
+              </tr>
+              <tr>
+                <td>Backend(Ruby)</td>
+                <td>529</td>
+              </tr>
+              <tr>
+                <td>Backend(PHP)</td>
+                <td>97</td>
+              </tr>
+              <tr>
+                <td>Cloud</td>
+                <td>754</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-container">
+          <h3>Student Gender</h3>
+          <table class="table-3">
+            <thead>
+              <tr>
+                <th>Gender</th>
+                <th onclick="sortTable('table-3', 1)">Number of Students <i class='bx bxs-sort-alt'></i></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Female</td>
+                <td>1409</td>
+              </tr>
+              <tr>
+                <td>Male</td>
+                <td>1843</td>
+              </tr>
+              <tr>
+                <td>Others</td>
+                <td>213</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-container">
+          <h3>Student Age</h3>
+          <table class="table-4">
+            <thead>
+              <tr>
+                <th>Minimum Age</th>
+                <th>Maximum Age</th>
+                <th>Average Age</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10</td>
+                <td>88</td>
+                <td>24</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+
+</html>

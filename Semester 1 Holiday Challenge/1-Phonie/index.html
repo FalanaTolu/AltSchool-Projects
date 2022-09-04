@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="script.js" defer></script>
   <title>Phonie</title>
@@ -16,12 +15,12 @@
     <div class="container">
       <form>
         <label for="name">Name</label>
-        <input id="name" placeholder="Full Name" required />
+        <input id="name" required />
         <label for="email">Email</label>
         <input id="email" type="email" />
         <label for="number">Phone Number</label>
         <div id="num-input">
-          <input type="tel" id="number" pattern="([\+](234)|0)(701|708|802|808|812|901|902|907)[0-9]+"
+          <input type="tel" id="number" pattern="([\+](234)|0)(701|708|802|808|812|901|902|907)[0-9]{7,}"
             autocomplete="tel" required />
           <div class="image-class" alt="carrier image">
             <img src="images/null.png">

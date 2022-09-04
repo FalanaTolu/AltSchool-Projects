@@ -1,77 +1,97 @@
 :root {
-    --padding-form: 5px;
-    --margin-form: 1px;
-    --font-size-form: 17px;
+  --padding-form: 5px;
+  --margin-form: 1px;
+  --font-size-form: 17px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 main {
-    text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: center / cover no-repeat url("./images/fakurian-unsplash.jpg");
 }
 
 .container {
-    display: inline-flex;
-    width: 70%;
-    margin-top: 5rem;
-    padding: var(--padding-form);
-    place-content: center;
+  display: inline-flex;
+  height: 70%;
+  width: 70%;
+  margin-top: 5rem;
+  padding: var(--padding-form);
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.8);
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 60%;   
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 60%;
 }
 
 form > * {
-    padding: var(--padding-form);
-    margin: var(--margin-form);
-    font-size: var(--font-size-form);
+  padding: var(--padding-form);
+  margin: var(--margin-form);
+  font-size: var(--font-size-form);
 }
 
 input {
-    height: 35px;
-    font-size: var(--font-size-form);
+  height: 35px;
+  font-size: var(--font-size-form);
+  border: 1px solid grey;
 }
 
 label {
-    text-align: start;
+  text-align: start;
+  padding-bottom: 0;
 }
 
 #num-input {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
 }
 
 #number {
-    width: 100%;
+  width: 100%;
 }
 
 .image-class {
-    position: relative;
+  position: relative;
 }
 
 img {
-    height: 2rem;
-    width: 2rem; 
-    position: absolute;
-    left: 6px;
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  left: 6px;
 }
 
 button {
-    margin-top: 25px;
-    font-size: var(--font-size-form);
+  margin-top: 25px;
+  font-size: var(--font-size-form);
+  background-color: steelblue;
+  color: whitesmoke;
+  border: none;
+  border-radius: 15px;
 }
 
 @media (max-width: 840px) {
-form {
-    width: 100%;   
-}
+  form {
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 20px 0 20px;
+  }
 }

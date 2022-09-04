@@ -47,6 +47,7 @@ textarea {
 }
 
 button {
+    height: 30px;
     width: var(--form-width);
     margin-bottom: var(--margin-form);
 }

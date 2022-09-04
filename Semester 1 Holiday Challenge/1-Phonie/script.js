@@ -1,36 +1,36 @@
-let carrier = document.getElementById("number")
-let image = document.querySelector(".image-class img")
+const carrier = document.getElementById("number")
+const image = document.querySelector(".image-class img")
 
 function displayImage() {
-    let carrierNumber = carrier.value
+    const carrierNumber = carrier.value
     
-    let carrierNumberMtn = ["0703", "0706", "0803", "0806", "0810", "0813", "0816", "0814", "0903", "0906", 
+    const carrierNumberMtn = ["0703", "0706", "0803", "0806", "0810", "0813", "0816", "0814", "0903", "0906", 
     "+234703", "+234706", "+234803", "+234806", "+234810", "+234813", "+234816", "+234814", "+234903", "+234906"]
-    let carrierNumberMtnFound = carrierNumberMtn.some(number => carrierNumber.startsWith(number))
+    const carrierNumberMtnFound = carrierNumberMtn.some(number => carrierNumber.startsWith(number))
     
-    let carrierNumberGlo = ["0705", "0805", "0811", "0807", "0815", "0905", 
+    const carrierNumberGlo = ["0705", "0805", "0811", "0807", "0815", "0905", 
     "+234705", "+234805", "+234811", "+234807", "+234815", "+234905"]
-    let carrierNumberGloFound = carrierNumberGlo.some(number => carrierNumber.startsWith(number))
+    const carrierNumberGloFound = carrierNumberGlo.some(number => carrierNumber.startsWith(number))
     
-    let carrierNumberAirtel = ["0701", "0708", "0802", "0808", "0812", "0901", "0902", "0907", 
+    const carrierNumberAirtel = ["0701", "0708", "0802", "0808", "0812", "0901", "0902", "0907", 
     "+234701", "+234708", "+234802", "+234808", "+234812", "+234901", "+234902", "+234907"]
-    let carrierNumberAirtelFound = carrierNumberAirtel.some(number => carrierNumber.startsWith(number))
+    const carrierNumberAirtelFound = carrierNumberAirtel.some(number => carrierNumber.startsWith(number))
     
-    let carrierNumber9mobile = ["0809", "0817", "0818", "0908", "0909", 
+    const carrierNumber9mobile = ["0809", "0817", "0818", "0908", "0909", 
     "+234809", "+234817", "+234818", "+234908", "+234909"]
-    let carrierNumber9mobileFound = carrierNumber9mobile.some(number => carrierNumber.startsWith(number))
+    const carrierNumber9mobileFound = carrierNumber9mobile.some(number => carrierNumber.startsWith(number))
     
-    let carrierNumberNtel = ["0804", "+234804"]
-    let carrierNumberNtelFound = carrierNumberNtel.some(number => carrierNumber.startsWith(number))
+    const carrierNumberNtel = ["0804", "+234804"]
+    const carrierNumberNtelFound = carrierNumberNtel.some(number => carrierNumber.startsWith(number))
     
-    let carrierNumberSmile = ["0702", "+234702"]
-    let carrierNumberSmileFound = carrierNumberSmile.some(number => carrierNumber.startsWith(number))
+    const carrierNumberSmile = ["0702", "+234702"]
+    const carrierNumberSmileFound = carrierNumberSmile.some(number => carrierNumber.startsWith(number))
     
-    let carrierNumberMultilinks = ["0709", "+234709"]
-    let carrierNumberMultilinksFound = carrierNumberMultilinks.some(number => carrierNumber.startsWith(number))
+    const carrierNumberMultilinks = ["0709", "+234709"]
+    const carrierNumberMultilinksFound = carrierNumberMultilinks.some(number => carrierNumber.startsWith(number))
     
-    let carrierNumberZoomMobile = ["0707", "+234707"]
-    let carrierNumberZoomMobileFound = carrierNumberZoomMobile.some(number => carrierNumber.startsWith(number))
+    const carrierNumberZoomMobile = ["0707", "+234707"]
+    const carrierNumberZoomMobileFound = carrierNumberZoomMobile.some(number => carrierNumber.startsWith(number))
 
     if (carrierNumberMtnFound) {
         image.src = "images/mtn.jpg"
@@ -56,11 +56,7 @@ function displayImage() {
 carrier.addEventListener("input", displayImage)
 
 
-carrier.oninvalid = function(event) {
+carrier.oninvalid = function() {
     // event.target.setCustomValidity("Please enter an airtel number");
-    carrier.title = "Only airtel numbers starting with 0701, 0708, 0802, 0808, 0812, 0901, 0902, 0907 are valid"
-}
-
-carrier.onchange = function(event) {
-    event.target.setCustomValidity("");
+    carrier.title = "Only airtel numbers that contain at least eleven digits(without the country code) and start with 0701, 0708, 0802, 0808, 0812, 0901, 0902, 0907 are valid"
 }
