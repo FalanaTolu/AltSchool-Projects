@@ -1,0 +1,243 @@
+:root {
+  --primary-background: rgb(239, 239, 237);
+  --primary-color: rgb(80, 80, 80);
+  --primary-button-color: rgb(80, 80, 80);
+  --primary-table-color: rgb(221, 221, 221);
+  --neutral-color: rgb(253, 253, 253);
+  --primary-light-background: rgb(227, 227, 225);
+  --item-border: rgb(80, 80, 80);
+}
+
+[data-theme="dark"],
+.dark {
+  --primary-background: rgb(4, 13, 33);
+  --primary-color: rgb(255, 255, 255);
+  --primary-button-color: rgb(54, 83, 172);
+  --primary-table-color: rgb(54, 83, 172);
+  --primary-light-background: rgba(85, 105, 127, 20);
+  --neutral-color: rgb(255, 255, 255);
+  --item-border: rgba(35, 55, 77, 20);
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  line-height: 1em;
+  background-color: var(--primary-background);
+}
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  margin: 0 20px 20px 0;
+  white-space: nowrap;
+  background-color: transparent;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.nav-link {
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  max-width: 150px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.active {
+  background-color: var(--primary-button-color);
+  color: var(--neutral-color);
+}
+
+.nav-btn {
+  border: none;
+  max-width: 200px;
+}
+
+.theme-btn {
+  margin-left: auto;
+  border: none;
+  background-color: var(--primary-background);
+}
+
+.theme-btn:hover {
+  background-color: var(--primary-background);
+}
+
+.loader-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: inherit;
+  z-index: 1;
+}
+
+.loader-container-outlet {
+  position: absolute;
+}
+
+section {
+  background-color: inherit;
+  height: 100vh;
+  width: 96vw;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-size: 1em;
+  padding: 0.5em;
+  margin: 0.5em;
+  border: 2px solid var(--primary-button-color);
+  border-radius: 15px;
+  background-color: var(--primary-background-color);
+}
+
+button:hover {
+  color: var(--neutral-color);
+  background-color: var(--primary-button-color);
+}
+
+input,
+select {
+  height: 3em;
+  padding: 3px 5px;
+  border-radius: 10px;
+  color: var(--primary-button-color);
+}
+
+select > * {
+  color: var(--primary-button-color);
+}
+
+.link {
+  margin-top: 1.5em;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2em;
+  gap: 1em;
+  background-color: var(--primary-light-background);
+}
+
+form input {
+  min-width: 50%;
+}
+
+.reg-form-content {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  gap: 0.5em;
+}
+
+#reg-form-btn {
+  width: 65%;
+}
+
+.link-btn {
+  min-width: 50%;
+  background-color: var(--primary-sign-button-color);
+  white-space: nowrap;
+}
+
+.dashboard-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-light-background);
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid var(--primary-color);
+  /* text-align: left; */
+  padding: 8px;
+}
+
+th {
+  font-size: 1.2em;
+}
+
+td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+tr:nth-child(even) {
+  background-color: var(--primary-table-color);
+}
+
+.search-container {
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.search-container > input {
+  width: 40%;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+}
+
+.pagination button {
+  min-width: 3em;
+}
+
+@media (max-width: 900px) {
+  table {
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  form input {
+    max-width: 100%;
+    height: 2em;
+  }
+}
