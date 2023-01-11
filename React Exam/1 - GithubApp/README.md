@@ -6,4 +6,4 @@ The information displayed includes the user's repositories, the user's most rece
 
 Only information available publicly through the Github API was used.
 
-The App is hosted here on [Netlify](https://magnificent-meringue-767508.netlify.app/)
+The App is hosted here on [Netlify](https://sparkling-starship-a8100b.netlify.app)
