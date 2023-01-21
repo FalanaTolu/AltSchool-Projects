@@ -33,9 +33,9 @@ body {
   background-color: var(--primary-background);
 }
 
-p {
+/* p {
   text-align: center;
-}
+} */
 
 .nav-bar {
   display: flex;

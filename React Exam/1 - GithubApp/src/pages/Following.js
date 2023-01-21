@@ -66,7 +66,7 @@ const Following = () => {
         </button>
         {Array.from({ length: totalPages }, (value, index) => index + 1).map(
           (each, index) => (
-            <button key={index} onClick={() => setPage(each)} id={each === page && "current"}>
+            <button key={index} onClick={() => setPage(each)} id={each === page ? "current" : ""}>
               {each}
             </button>
           )

@@ -60,7 +60,8 @@ const Pagination = (props) => {
             {pageArray.map((page) => {
               return (
                 <button
-                  id={page === currentPage && "current"}
+                key={page}
+                id={page === currentPage ? "current" : ""}
                   onClick={() => {
                     setOffset(perPage * (page - 1));
                   }}
@@ -73,7 +74,7 @@ const Pagination = (props) => {
               <>
                 <div>...</div>
                 <button
-                  id={currentPage === totalPages && "current"}
+                  id={currentPage === totalPages ? "current" : ""}
                   onClick={() => {
                     setOffset(highestPossibleOffset);
                   }}

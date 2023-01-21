@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion as m } from "framer-motion";
-import { SEO, Navigation, Loader } from "../components";
+import { SEO, Navigation } from "../components";
 import {
   auth,
   collection,
@@ -44,11 +44,10 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    if (loading) {<Loader />; return;}
-    if (!user) return navigate("/");
     getUser();
-  }, [loading, user]);
-
+    //eslint-disable-next-line
+  }, []);
+  
   return (
     <m.section
       initial={{ y: "50%" }}

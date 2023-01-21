@@ -7,7 +7,7 @@ const Home = () => {
     <section>
       <SEO
         title="Home"
-        name="Login Page"
+        name="Home Page"
         description="Shows implementation of firebase hosting and authentication using the Google Authentication and password methods"
         type="page"
       />

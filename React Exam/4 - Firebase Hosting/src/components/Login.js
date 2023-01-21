@@ -21,7 +21,7 @@ import Loader from "./Loader";
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [user, loading, error] = useAuthState(auth);
-  // const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
 
   // Sign in with With Email and Password
@@ -55,14 +55,12 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (loading) {
-      <Loader />;
-    }
-    // if (user && localStorage.getItem("checked")) {
-    //   localStorage.setItem("auth.user", user);
+    // if (loading && user === undefined)  return <Loader />;
+    // if (user && checked) {
+    //   localStorage.setItem("auth.user", JSON.stringify(user));
     // }
-    if (user && GoogleAuthProvider) {
-      navigate("/dashboard");
+    if (user) {
+      // navigate("/dashboard");
       //If the user is new, store the user in firestore database
       getDocs(
         query(collection(db, "users"), where("uid", "==", user.uid))
@@ -76,10 +74,10 @@ const Login = () => {
           });
         }
       });
-      return;
+      return auth.currentUser === undefined ? <Loader /> : navigate("/dashboard");
     }
     //eslint-disable-next-line
-  }, [loading, user]);
+  }, [user]);
 
   return (
     <article className="form-container">
@@ -123,14 +121,14 @@ const Login = () => {
             }}
           >
             <label>
-              <input type="checkbox" name="remember-me"  onChange={(e) => {e.target.checked ? localStorage.setItem("checked", true) : localStorage.removeItem("checked");}}/>Remember me 
+              <input type="checkbox" name="remember-me"  onChange={(e) => {e.target.checked && setChecked(true);}}/>Remember me 
             </label>
               <Link className="form-links" to="/reset">
                 Forgot Password?
               </Link>
           </div>
 
-          <p>
+          <p style={{textAlign: "center"}}>
             Not yet registered?{" "}
             <Link className="form-links" to="/registration">
               Register

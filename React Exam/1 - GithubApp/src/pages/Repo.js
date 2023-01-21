@@ -98,7 +98,7 @@ const Repo = () => {
               key={index}
               onClick={() => setPage(each)}
               id={
-                each === page && "current" 
+                each === page ? "current" : ""
               }
             >
               {each}
