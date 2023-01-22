@@ -45,6 +45,7 @@ const Login = () => {
   // Sign in with Google
   const SignInWithGoogle = async (event) => {
     event.preventDefault();
+    navigate("/dashboard");
     signInWithRedirect(auth, provider).catch((error) => {
       console.log(error.code, error.message);
       // The AuthCredential type that was used.
