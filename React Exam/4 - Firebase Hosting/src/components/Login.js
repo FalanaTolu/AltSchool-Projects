@@ -5,7 +5,6 @@ import {
   signInWithRedirect,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-  getRedirectResult,
   getDocs,
   query,
   collection,
@@ -46,21 +45,22 @@ const Login = () => {
   // Sign in with Google
   const SignInWithGoogle = async (event) => {
     event.preventDefault();
+    navigate("/dashboard");
     signInWithRedirect(auth, provider).catch((error) => {
       console.log(error.code, error.message);
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
       // ...
     });
+    if (user === null) {<div> Loggin in...</div>;}
   };
 
   useEffect(() => {
-    // if (loading && user === undefined)  return <Loader />;
+    if (user === null) {<div> Loggin in...</div>;}
     // if (user && checked) {
-    //   localStorage.setItem("auth.user", JSON.stringify(user));
+    //   localStorage.setItem("authUser", JSON.stringify(user));
     // }
     if (user) {
-      // navigate("/dashboard");
       //If the user is new, store the user in firestore database
       getDocs(
         query(collection(db, "users"), where("uid", "==", user.uid))
@@ -74,7 +74,7 @@ const Login = () => {
           });
         }
       });
-      return auth.currentUser === undefined ? <Loader /> : navigate("/dashboard");
+      return navigate("/dashboard");
     }
     //eslint-disable-next-line
   }, [user]);
