@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import { Home, Dashboard, NotFound, Test, Registration, Reset } from "./pages";
-import "./index.css";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { FetchData, BackendData, PrivateRoutes } from "./components";
+import "./index.css";
 
 export default function App() {
 

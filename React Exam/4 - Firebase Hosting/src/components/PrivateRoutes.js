@@ -6,7 +6,7 @@ import { Loader } from "../components";
 const PrivateRoutes = () => {
   const [user, loading] = useAuthState(auth);
   
-  return user ? <Outlet /> : !user ? <Loader /> : <Navigate to="/" />;
+  return user ? <Outlet /> : user === null ? <Loader /> : <Navigate to="/" />;
 };
 
 export default PrivateRoutes;

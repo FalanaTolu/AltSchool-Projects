@@ -45,18 +45,15 @@ const Login = () => {
   // Sign in with Google
   const SignInWithGoogle = async (event) => {
     event.preventDefault();
-    navigate("/dashboard");
     signInWithRedirect(auth, provider).catch((error) => {
       console.log(error.code, error.message);
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
       // ...
     });
-    if (user === null) {<div> Loggin in...</div>;}
   };
 
   useEffect(() => {
-    if (user === null) {<div> Loggin in...</div>;}
     // if (user && checked) {
     //   localStorage.setItem("authUser", JSON.stringify(user));
     // }
